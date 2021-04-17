@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/weather_nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="lukakrivacevic.weatherapp.ui.fragments.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_cityWeatherForecastFragment"
+            app:destination="@id/cityWeatherForecastFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cityWeatherForecastFragment"
+        android:name="lukakrivacevic.weatherapp.ui.fragments.CityWeatherForecastFragment"
+        android:label="CityWeatherForecastFragment" >
+        <argument
+            android:name="city"
+            app:argType="lukakrivacevic.weatherapp.data.local.entities.City" />
+    </fragment>
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="lukakrivacevic.weatherapp.ui.fragments.WebViewFragment"
+        android:label="WebViewFragment" />
+</navigation>

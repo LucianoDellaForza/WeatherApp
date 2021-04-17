@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tvBookmarkHeadline"
+        android:textSize="25sp"
+        android:text="@string/bookmark_headline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textStyle="bold"
+        />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCities"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:maxHeight="220dp"
+        android:clipToPadding="false"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/custom_border"
+        app:layout_constraintTop_toBottomOf="@id/tvBookmarkHeadline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/addCityConstraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rvCities">
+
+        <EditText
+            android:id="@+id/etCityName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="City name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <EditText
+            android:id="@+id/etCityLon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="50dp"
+            android:hint="lon."
+            android:inputType="numberDecimal"
+            android:layout_marginStart="32dp"
+            app:layout_constraintStart_toEndOf="@id/etCityName"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <EditText
+            android:id="@+id/etCityLat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="50dp"
+            android:layout_marginStart="8dp"
+            android:hint="lat."
+            android:inputType="numberDecimal"
+            app:layout_constraintStart_toEndOf="@id/etCityLon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <Button
+            android:id="@+id/btnAddCity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addCityConstraintLayout"
+        app:layout_constraintBottom_toTopOf="@id/btnWebView">
+
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:text="Map"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"/>
+
+<!--            <fragment xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--                xmlns:map="http://schemas.android.com/apk/res-auto"-->
+<!--                xmlns:tools="http://schemas.android.com/tools"-->
+<!--                android:id="@+id/map"-->
+<!--                android:name="com.google.android.gms.maps.SupportMapFragment"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="400dp"-->
+<!--                tools:context=".presentation.view.activities.MapsActivity" />-->
+
+        </FrameLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+    <Button
+        android:id="@+id/btnWebView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="WebView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
